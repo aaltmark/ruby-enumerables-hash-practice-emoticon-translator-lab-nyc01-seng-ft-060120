@@ -59,8 +59,8 @@ end
 
 def get_japanese_emoticon (file, western_emoticon)
   load_library.each do |key, value|
+    if load_library[value]
   end
-binding.pry
   # code goes here
 end
 
