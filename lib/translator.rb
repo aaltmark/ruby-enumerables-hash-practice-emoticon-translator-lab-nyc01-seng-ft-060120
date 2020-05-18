@@ -1,60 +1,13 @@
 require 'pry'
 
-def load_library (emoticons)
-  emoticons = {
-    'angel' => {
-      :english => "O:)",
-      :japanese => "☜(⌒▽⌒)☞",
-    },
-    'angry' => {
-      :english => ">:(",
-      :japanese => "ヽ(ｏ`皿′ｏ)ﾉ",
-    },
-    'bored' => {
-      :english => ">:(",
-      :japanese => "(ΘεΘ;)",
-    },
-    'confused' => {
-      :english => "%)",
-      :japanese => "(゜.゜)",
-    },
-    'embarrassed' => {
-      :english => ":$",
-      :japanese => "(#^.^#)",
-    },
-    'fish' => {
-      :english => "><>",
-      :japanese => ">゜))))彡",
-    },
-    'glasses' => {
-      :english => "8D",
-      :japanese => "(^0_0^)",
-    },
-    'grinning' => {
-      :english => "=D",
-      :japanese => "(￣ー￣)",
-    },
-    'happy' => {
-      :english => ":)",
-      :japanese => "(＾ｖ＾)",
-    },
-    'kiss' => {
-      :english => ":*",
-      :japanese => "(*^3^)/~☆",
-    },
-    'sad' => {
-      :english => ":'(",
-      :japanese => "(Ｔ▽Ｔ)",
-    },
-    'surprised' => {
-      :english => ":o",
-      :japanese => "o_O",
-    },
-    'wink' => {
-      :english => ";)",
-      :japanese => "(^_-)",
-    },
-  }
+def load_library (path)
+  emoticons = {"get_meaning"=> {}, "get_emoticon"=>{}}
+  YAML.load_file(path).each do |meaning, describe|
+    eng, jan = describe
+    emoticons["get_meaning"][jan] = meaning
+    emoticons["get_emoticon"][eng]= jan
+  end
+  emoticons
 end
 
 def get_japanese_emoticon (path, emoticon)
