@@ -1,4 +1,4 @@
-# require modules here
+require 'pry'
 
 def load_library (emoticons)
   emoticons = {
@@ -58,7 +58,9 @@ def load_library (emoticons)
 end
 
 def get_japanese_emoticon (file, western_emoticon)
-  load_library[western_emoticon]
+  load_library.each do |key, value|
+    binding.pry
+  end
   # code goes here
 end
 
