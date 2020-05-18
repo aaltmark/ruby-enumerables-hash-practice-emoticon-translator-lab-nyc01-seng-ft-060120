@@ -19,11 +19,12 @@ def get_japanese_emoticon (path, emoticon)
   new_hash.each do |emotion, emoticon_hash|
     if emoticon_hash][:english] == emoticon
       japanese_emoticon = emoticon_hash[:japanese]
-    else
-      "Sorry, that emoticon was not found"
     end
   end
+if japanese_emoticon = true
   japanese_emoticon
+else
+  "Sorry, that emoticon was not found"
 end
 
 def get_english_meaning (path, emoticon)
