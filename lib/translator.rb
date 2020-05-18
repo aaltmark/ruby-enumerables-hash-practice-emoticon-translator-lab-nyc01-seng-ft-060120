@@ -17,7 +17,12 @@ end
 def get_japanese_emoticon (path, emoticon)
   new_hash = load_library(path)
   new_hash.each do |emotion, emoticon_hash|
-    if emoticon_hash][0]
+    if emoticon_hash][:english] == emoticon
+      emoticon_hash[:japanese]
+    else
+      "Sorry, that emoticon was not found"
+    end
+  end
 end
 
 def get_english_meaning (path, emoticon)
