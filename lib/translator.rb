@@ -57,8 +57,8 @@ def load_library (emoticons)
   }
 end
 
-def get_japanese_emoticon (file, japanese_emoticon)
-  load_library[japanese_emoticon]
+def get_japanese_emoticon (file, western_emoticon)
+  load_library[western_emoticon]
   # code goes here
 end
 
