@@ -57,13 +57,22 @@ def load_library (emoticons)
   }
 end
 
-def get_japanese_emoticon (file, western_emoticon)
-  load_library.each do |key, value|
-    if load_library[value]
+def get_japanese_emoticon (path, emoticon)
+  emoticons = load_library(path)
+  result = emoticons["get_emoticon"][emoticon]
+  if result
+    result
+  else
+    "Sorry, that emoticon was not found"
   end
-  # code goes here
 end
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning (path, emoticon)
+  emoticons = load_library(path)
+  result = emoticons["get_meaning"][emoticon]
+  if result
+    result
+  else
+    "Sorry, that emoticon was not found"
+  end
 end
