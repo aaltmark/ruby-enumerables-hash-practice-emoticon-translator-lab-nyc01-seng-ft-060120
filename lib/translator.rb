@@ -11,6 +11,7 @@ def load_library (path)
       :japanese=> emoticon[1]
     }
   end
+  new_hash
 end
 
 def get_japanese_emoticon (path, emoticon)
