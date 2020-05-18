@@ -1,4 +1,5 @@
 require 'pry'
+require 'yaml'
 
 def load_library (path)
   emoticons = {"get_meaning"=> {}, "get_emoticon"=>{}}
